@@ -6,8 +6,11 @@ class Home extends BaseController
 {
     public function index()
     {
-        echo view('layout/header');
-        echo view('home/index');
-        echo view('layout/footer');
+        $data = [
+            'title' => 'Home | Lorem Gallery',
+            'css' => '/styles/home.css'
+        ];
+
+        return view('home/home', $data);
     }
 }
