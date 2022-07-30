@@ -15,21 +15,27 @@ class Home extends BaseController
 
     public function index()
     {
-        $picture = $this->pictureModel->findAll();
 
         $homeData = [
-            'picture' => $picture,
+            'picture' => $this->pictureModel->getPicture(),
             'title' => 'Home | Lorem Gallery',
             'css' => '/styles/home.css'
         ];
 
         $photosData = [
-            'picture' => $picture,
+            'picture' => $this->pictureModel->getPicture(),
             'title' => 'Home | Lorem Gallery',
             'css' => '/styles/photos.css'
         ];
 
         echo view('home/home', $homeData);
         echo view('photos/photos', $photosData);
+    }
+
+    public function details($slug)
+    {
+        $picture = $this->pictureModel->getPicture($slug);
+
+        dd($picture);
     }
 }
