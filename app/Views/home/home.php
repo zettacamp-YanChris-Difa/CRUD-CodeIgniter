@@ -15,4 +15,12 @@
     </div>
 </div>
 
+<?php foreach ($picture as $pics) : ?>
+    <div>
+        <h1><?= $pics['title']; ?></h1>
+        <img src="/images/<?= $pics['image']; ?>" alt="">
+        <p><?= $pics['description']; ?></p>
+    </div>
+<?php endforeach; ?>
+
 <?= $this->endSection(); ?>
