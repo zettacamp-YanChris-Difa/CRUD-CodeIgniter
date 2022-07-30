@@ -5,7 +5,7 @@
 <div class="photos__container content__section-container">
     <h1 class="content__section-header">Photos</h1>
     <div class="photos__content-container">
-        <?php foreach ($picture as $pics) : dd($pics)?>
+        <?php foreach ($picture as $pics) : ?>
             <a href="#">
                 <div class="photos__image-container">
                     <img class="photos__image" src="<?= $pics['image']; ?>" alt="">
