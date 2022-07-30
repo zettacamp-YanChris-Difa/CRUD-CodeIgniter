@@ -17,12 +17,19 @@ class Home extends BaseController
     {
         $picture = $this->pictureModel->findAll();
 
-        $data = [
+        $homeData = [
             'picture' => $picture,
             'title' => 'Home | Lorem Gallery',
             'css' => '/styles/home.css'
         ];
 
-        return view('home/home', $data);
+        $photosData = [
+            'picture' => $picture,
+            'title' => 'Home | Lorem Gallery',
+            'css' => '/styles/photos.css'
+        ];
+
+        echo view('home/home', $homeData);
+        echo view('photos/photos', $photosData);
     }
 }

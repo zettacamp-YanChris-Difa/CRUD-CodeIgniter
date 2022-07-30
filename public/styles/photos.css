@@ -1,0 +1,48 @@
+.photos__content-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.photos__image-container {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+}
+
+.photos__image {
+    width: 100%;
+    height: 100%;
+}
+
+.photos__image_details-container {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+    transition: .3s;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.photos__image_details-container:hover {
+    opacity: 1;
+}
+    
+.photos__image_details-container * {
+    color: #fff;
+    width: fit-content;
+}
+
+.photos__image-price {
+    background-color: var(--primary-color);
+    padding: 0 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+}

@@ -125,3 +125,14 @@ img {
 .button:hover {
   box-shadow: 0 4px 12px hsla(228, 66%, 45%, 0.25);
 }
+
+.content__section-container {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.content__section-header {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
