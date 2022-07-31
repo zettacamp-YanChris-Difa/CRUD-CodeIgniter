@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/styles/navbar.css">
     <!-- ===== Content CSS ===== -->
     <link rel="stylesheet" href="<?= $css; ?>">
+    <!-- ===== Icons CSS ===== -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title><?= $title; ?></title>
 </head>
 

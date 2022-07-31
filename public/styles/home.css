@@ -74,4 +74,5 @@
   z-index: 10;
   height: 4rem;
   width: 4rem;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }

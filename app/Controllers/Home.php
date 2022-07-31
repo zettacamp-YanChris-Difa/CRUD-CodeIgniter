@@ -32,20 +32,55 @@ class Home extends BaseController
         echo view('photos/photos', $photosData);
     }
 
-    public function details($slug)
+    public function details($id)
     {
-        $picture = $this->pictureModel->getPicture($slug);
+        $photoDetailsData = [
+            'picture' => $this->pictureModel->getPicture($id),
+            'title' => 'Details | Lorem Gallery',
+            'css' => '/styles/photoDetails.css'
+        ];
+        return view('photos/photoDetails', $photoDetailsData);
+    }
 
-        dd($picture);
+    public function delete($id) 
+    {
+        $this->pictureModel->delete($id);
+        return redirect()->to('/');
     }
 
     public function create()
     {
         $data = [
             'title' => 'Post Picture | Lorem Gallery',
-            'css' => '/styles/photos.css'
+            'css' => '/styles/photoForms.css'
         ];
 
-        return view('photos/createPhotos', $data);
+        return view('photos/createPhoto', $data);
+    }
+
+    public function save()
+    {
+        $sentData = $this->request->getVar();
+        $this->pictureModel->save([
+            'image' => $sentData['image'],
+            'title' => $sentData['title'],
+            'description' => $sentData['description'],
+            'price' => $sentData['price'],
+            'slug' => $sentData['title'],
+            'uploader' => $sentData['uploader'],
+        ]);
+
+        return redirect()->to('/');
+    }
+
+    public function edit($id)
+    {
+        $data = [
+            'picture' => $this->pictureModel->getPicture($id),
+            'title' => 'Edit Picture | Lorem Gallery',
+            'css' => '/styles/photoForms.css'
+        ];
+
+        return view('photos/editPhoto', $data);
     }
 }
