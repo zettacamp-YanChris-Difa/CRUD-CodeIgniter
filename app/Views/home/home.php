@@ -13,6 +13,8 @@
             </form>
         </div>
     </div>
+
+    <a href="/photos/post" class="button__add"><i class='bx bx-plus button__add-icon'></i></a>
 </div>
 
 <?= $this->endSection(); ?>

@@ -37,6 +37,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/(:segment)', 'Home::details/$1');
+$routes->get('/photos/post', 'Home::create');
 
 $routes->setAutoRoute(true);
 

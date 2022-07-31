@@ -38,4 +38,14 @@ class Home extends BaseController
 
         dd($picture);
     }
+
+    public function create()
+    {
+        $data = [
+            'title' => 'Post Picture | Lorem Gallery',
+            'css' => '/styles/photos.css'
+        ];
+
+        return view('photos/createPhotos', $data);
+    }
 }
