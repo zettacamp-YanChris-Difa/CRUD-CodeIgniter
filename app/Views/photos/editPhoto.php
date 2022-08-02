@@ -5,7 +5,7 @@
 <div class="forms__container">
     <div class="forms__content-container">
         <h1 class="forms__header">Add Product</h1>
-        <form action="/home/save" method="post" class="forms__input-container">
+        <form action="<?= base_url('/home/update/'. $picture['id']) ?>" method="post" class="forms__input-container">
             <div class="form__input">
                 <label for="title">Product Name</label>
                 <input type="text" name="title" id="title" value="<?= $picture['title'] ?>" required>

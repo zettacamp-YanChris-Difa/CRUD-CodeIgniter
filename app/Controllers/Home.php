@@ -83,4 +83,17 @@ class Home extends BaseController
 
         return view('photos/editPhoto', $data);
     }
+
+    public function update($id)
+    {
+        $this->pictureModel->update($id, [
+                'image' => $this->request->getPost('image'),
+                'title' => $this->request->getPost('title'),
+                'description' => $this->request->getPost('description'),
+                'price' => $this->request->getPost('price'),
+                'uploader' => $this->request->getPost('uploader'),
+            ]);
+
+            return redirect()->to('/');
+    }
 }

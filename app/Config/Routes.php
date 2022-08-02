@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/(:segment)', 'Home::details/$1');
 $routes->get('/photos/post', 'Home::create');
+$routes->get('/home/update/(:segment)', 'Home::update/$1');
 
 $routes->setAutoRoute(true);
 
